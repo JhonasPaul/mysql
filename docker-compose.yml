@@ -1,4 +1,3 @@
-# /home/jonathan/infrastructure/mysql/docker-compose.yml
 services:
   db:
     image: mysql:8
@@ -6,10 +5,10 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 45549813O
-      MYSQL_DATABASE: futbolistas_db  # Base de datos por defecto (opcional)
+      MYSQL_DATABASE: futbolistas_db
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./init-db:/docker-entrypoint-initdb.d  # Monta el directorio de inicialización
+      - ./init-db:/docker-entrypoint-initdb.d
     networks:
       - spring
     ports:
@@ -21,4 +20,3 @@ networks:
 
 volumes:
   mysql-data:
-    driver: local
